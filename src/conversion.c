@@ -690,6 +690,13 @@ _gpgme_map_pk_algo (int algo, gpgme_protocol_t protocol)
         {
         case 1: case 2: case 3: case 8: case 16: case 17: break;
         case 18: algo = GPGME_PK_ECDH; break;
+        case 30: algo = GPGME_PK_MLDSA65_ED25519; break;
+        case 31: algo = GPGME_PK_MLDSA87_ED448; break;
+        case 32: algo = GPGME_PK_SLHDSA_SHAKE_128S; break;
+        case 33: algo = GPGME_PK_SLHDSA_SHAKE_128F; break;
+        case 34: algo = GPGME_PK_SLHDSA_SHAKE_256S; break;
+        case 35: algo = GPGME_PK_MLKEM768_X25519; break;
+        case 36: algo = GPGME_PK_MLKEM1024_X448; break;
         case 19: algo = GPGME_PK_ECDSA; break;
         case 20: break;
         case 22: algo = GPGME_PK_EDDSA; break;

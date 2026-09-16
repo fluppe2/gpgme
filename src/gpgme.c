@@ -1366,7 +1366,24 @@ gpgme_pubkey_algo_name (gpgme_pubkey_algo_t algo)
     case GPGME_PK_ECDSA: return "ECDSA";
     case GPGME_PK_ECDH:  return "ECDH";
     case GPGME_PK_EDDSA: return "EdDSA";
-    default:             return NULL;
+
+    case GPGME_PK_MLDSA65_ED25519:
+      return "ML-DSA-65+Ed25519";
+    case GPGME_PK_MLDSA87_ED448:
+      return "ML-DSA-87+Ed448";
+    case GPGME_PK_SLHDSA_SHAKE_128S:
+      return "SLH-DSA-SHAKE-128s";
+    case GPGME_PK_SLHDSA_SHAKE_128F:
+      return "SLH-DSA-SHAKE-128f";
+    case GPGME_PK_SLHDSA_SHAKE_256S:
+      return "SLH-DSA-SHAKE-256s";
+    case GPGME_PK_MLKEM768_X25519:
+      return "ML-KEM-768+X25519";
+    case GPGME_PK_MLKEM1024_X448:
+      return "ML-KEM-1024+X448";
+
+    default:
+      return NULL;
     }
 }
 
