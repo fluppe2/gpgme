@@ -696,7 +696,15 @@ _gpgme_map_pk_algo (int algo, gpgme_protocol_t protocol)
         case 33:
         case 34: algo = GPGME_PK_SLHDSA; break;
         case 35:
-        case 36: algo = GPGME_PK_MLKEM; break;
+        case 36:
+        case 37:
+        case 38:
+        case 39:
+        case 40: algo = GPGME_PK_MLKEM; break;
+        case 41:
+        case 42:
+        case 43:
+        case 44: algo = GPGME_PK_MLDSA; break;
         case 19: algo = GPGME_PK_ECDSA; break;
         case 20: break;
         case 22: algo = GPGME_PK_EDDSA; break;

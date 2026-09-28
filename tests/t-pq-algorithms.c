@@ -103,6 +103,14 @@ main (void)
       { GPGME_PK_SLHDSA, "SLH-DSA-SHAKE-256s" },
       { GPGME_PK_MLKEM, "ML-KEM-768+X25519" },
       { GPGME_PK_MLKEM, "ML-KEM-1024+X448" },
+      { GPGME_PK_MLKEM, "ML-KEM-768+ECDH-NIST-P-384" },
+      { GPGME_PK_MLKEM, "ML-KEM-1024+ECDH-NIST-P-521" },
+      { GPGME_PK_MLKEM, "ML-KEM-768+ECDH-brainpoolP384r1" },
+      { GPGME_PK_MLKEM, "ML-KEM-1024+ECDH-brainpoolP512r1" },
+      { GPGME_PK_MLDSA, "ML-DSA-65+ECDSA-NIST-P-384" },
+      { GPGME_PK_MLDSA, "ML-DSA-87+ECDSA-NIST-P-521" },
+      { GPGME_PK_MLDSA, "ML-DSA-65+ECDSA-brainpoolP384r1" },
+      { GPGME_PK_MLDSA, "ML-DSA-87+ECDSA-brainpoolP512r1" },
       { GPGME_PK_MLKEM, "mlk768_bp384" },
       { GPGME_PK_MLKEM, "mlk1024_x448" }
     };
