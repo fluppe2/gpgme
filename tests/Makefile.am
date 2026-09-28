@@ -23,7 +23,8 @@
 GNUPGHOME=$(abs_builddir)
 TESTS_ENVIRONMENT = GNUPGHOME=$(GNUPGHOME)
 
-TESTS = t-version t-data t-engine-info t-pq-algorithms
+common_tests = t-version t-data t-engine-info
+TESTS = $(common_tests) t-pq-algorithms
 
 EXTRA_DIST = start-stop-agent t-data-1.txt t-data-2.txt ChangeLog-2011
 
@@ -39,7 +40,8 @@ LDADD = ../src/libgpgme.la @GPG_ERROR_LIBS@ @LDADD_FOR_TESTS_KLUDGE@
 
 noinst_HEADERS = run-support.h
 
-noinst_PROGRAMS = $(TESTS) run-keylist run-export run-import run-sign \
+noinst_PROGRAMS = $(common_tests) t-pq-algorithms \
+		  run-keylist run-export run-import run-sign \
 		  run-verify run-encrypt run-identify run-decrypt run-genkey \
 		  run-keysign run-tofu run-swdb run-threaded \
 		  run-receive-keys run-setownertrust run-genrandom
