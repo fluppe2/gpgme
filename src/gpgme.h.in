@@ -276,18 +276,15 @@ typedef enum
     GPGME_PK_ECC   = 18,
     GPGME_PK_ELG   = 20,
 
-    /* OpenPGP RFC 9980 post-quantum algorithms.  */
-    GPGME_PK_MLDSA65_ED25519   = 30,
-    GPGME_PK_MLDSA87_ED448     = 31,
-    GPGME_PK_SLHDSA_SHAKE_128S = 32,
-    GPGME_PK_SLHDSA_SHAKE_128F = 33,
-    GPGME_PK_SLHDSA_SHAKE_256S = 34,
-    GPGME_PK_MLKEM768_X25519   = 35,
-    GPGME_PK_MLKEM1024_X448    = 36,
-
     GPGME_PK_ECDSA = 301,
     GPGME_PK_ECDH  = 302,
-    GPGME_PK_EDDSA = 303
+    GPGME_PK_EDDSA = 303,
+
+    /* Generic post-quantum family/pseudo IDs.  Concrete composite
+     * algorithm names are carried separately in metadata.  */
+    GPGME_PK_MLKEM = 331,
+    GPGME_PK_MLDSA = 332,
+    GPGME_PK_SLHDSA = 333
   }
 gpgme_pubkey_algo_t;
 

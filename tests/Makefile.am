@@ -23,7 +23,7 @@
 GNUPGHOME=$(abs_builddir)
 TESTS_ENVIRONMENT = GNUPGHOME=$(GNUPGHOME)
 
-TESTS = t-version t-data t-engine-info
+TESTS = t-version t-data t-engine-info t-pq-algorithms
 
 EXTRA_DIST = start-stop-agent t-data-1.txt t-data-2.txt ChangeLog-2011
 
