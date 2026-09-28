@@ -1302,40 +1302,12 @@ gpgme_sig_notation_get (gpgme_ctx_t ctx)
 /* Return a public key algorithm string made of the algorithm and size
    or the curve name.  May return NULL on error.  Caller must free the
    result using gpgme_free.  */
-static gpgme_pubkey_algo_t
-normalize_pq_family_algo (gpgme_pubkey_algo_t algo)
-{
-  /* Compatibility mapping from raw OpenPGP RFC9980 algorithm IDs to
-   * generic GPGME PQ family identifiers.  */
-  switch (algo)
-    {
-    case 30:
-    case 31:
-    case 41:
-    case 42:
-    case 43:
-    case 44: return GPGME_PK_MLDSA;
-    case 32:
-    case 33:
-    case 34: return GPGME_PK_SLHDSA;
-    case 35:
-    case 36:
-    case 37:
-    case 38:
-    case 39:
-    case 40: return GPGME_PK_MLKEM;
-    default: return algo;
-    }
-}
-
-
 char *
 gpgme_pubkey_algo_string (gpgme_subkey_t subkey)
 {
   const char *prefix = NULL;
   char *result;
   int composite = 0;
-  gpgme_pubkey_algo_t algo;
 
   if (!subkey)
     {
@@ -1343,9 +1315,7 @@ gpgme_pubkey_algo_string (gpgme_subkey_t subkey)
       return NULL;
     }
 
-  algo = normalize_pq_family_algo (subkey->pubkey_algo);
-
-  switch (algo)
+  switch (subkey->pubkey_algo)
     {
     case GPGME_PK_RSA:
     case GPGME_PK_RSA_E:
@@ -1386,8 +1356,6 @@ gpgme_pubkey_algo_string (gpgme_subkey_t subkey)
 const char *
 gpgme_pubkey_algo_name (gpgme_pubkey_algo_t algo)
 {
-  algo = normalize_pq_family_algo (algo);
-
   switch (algo)
     {
     case GPGME_PK_RSA:   return "RSA";
