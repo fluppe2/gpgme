@@ -87,7 +87,12 @@ main (void)
     {
       { GPGME_PK_MLKEM, 331, "MLKEM" },
       { GPGME_PK_MLDSA, 332, "MLDSA" },
-      { GPGME_PK_SLHDSA, 333, "SLHDSA" }
+      { GPGME_PK_SLHDSA, 333, "SLHDSA" },
+      { (gpgme_pubkey_algo_t)30, 30, "MLDSA" },
+      { (gpgme_pubkey_algo_t)32, 32, "SLHDSA" },
+      { (gpgme_pubkey_algo_t)35, 35, "MLKEM" },
+      { (gpgme_pubkey_algo_t)40, 40, "MLKEM" },
+      { (gpgme_pubkey_algo_t)44, 44, "MLDSA" }
     };
   static struct
   {
@@ -112,7 +117,12 @@ main (void)
       { GPGME_PK_MLDSA, "ML-DSA-65+ECDSA-brainpoolP384r1" },
       { GPGME_PK_MLDSA, "ML-DSA-87+ECDSA-brainpoolP512r1" },
       { GPGME_PK_MLKEM, "mlk768_bp384" },
-      { GPGME_PK_MLKEM, "mlk1024_x448" }
+      { GPGME_PK_MLKEM, "mlk1024_x448" },
+      { (gpgme_pubkey_algo_t)30, "ML-DSA-65+Ed25519" },
+      { (gpgme_pubkey_algo_t)32, "SLH-DSA-SHAKE-128s" },
+      { (gpgme_pubkey_algo_t)35, "ML-KEM-768+X25519" },
+      { (gpgme_pubkey_algo_t)40, "mlk768_bp384" },
+      { (gpgme_pubkey_algo_t)44, "ML-DSA-87+ECDSA-brainpoolP512r1" }
     };
   size_t idx;
 
