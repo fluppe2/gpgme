@@ -1305,6 +1305,8 @@ gpgme_sig_notation_get (gpgme_ctx_t ctx)
 static gpgme_pubkey_algo_t
 normalize_pq_family_algo (gpgme_pubkey_algo_t algo)
 {
+  /* Compatibility mapping from raw OpenPGP RFC9980 algorithm IDs to
+   * generic GPGME PQ family identifiers.  */
   switch (algo)
     {
     case 30:
