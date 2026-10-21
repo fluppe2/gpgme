@@ -699,6 +699,11 @@ _gpgme_map_pk_algo (int algo, gpgme_protocol_t protocol)
 
         case 30: /* ML-DSA-65+Ed25519 (RFC9980)      */
         case 31: /* ML-DSA-87+Ed448 (RFC9980)        */
+        /* draft-ietf-openpgp-nist-bp-comp-05 composite signatures.  */
+        case 41: /* ML-DSA-65+ECDSA-NIST-P-384      */
+        case 42: /* ML-DSA-87+ECDSA-NIST-P-521      */
+        case 43: /* ML-DSA-65+ECDSA-brainpoolP384r1 */
+        case 44: /* ML-DSA-87+ECDSA-brainpoolP512r1 */
           algo = GPGME_PK_MLDSA;
           break;
 
