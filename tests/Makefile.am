@@ -23,7 +23,7 @@
 GNUPGHOME=$(abs_builddir)
 TESTS_ENVIRONMENT = GNUPGHOME=$(GNUPGHOME)
 
-TESTS = t-version t-data t-engine-info
+TESTS = t-version t-data t-engine-info t-pubkey-algo
 
 EXTRA_DIST = start-stop-agent t-data-1.txt t-data-2.txt ChangeLog-2011
 
@@ -36,6 +36,8 @@ AM_LDFLAGS = -no-install
 endif
 
 LDADD = ../src/libgpgme.la @GPG_ERROR_LIBS@ @LDADD_FOR_TESTS_KLUDGE@
+
+t_pubkey_algo_LDADD = ../src/conversion.lo $(LDADD)
 
 noinst_HEADERS = run-support.h
 

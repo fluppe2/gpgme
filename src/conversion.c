@@ -702,6 +702,12 @@ _gpgme_map_pk_algo (int algo, gpgme_protocol_t protocol)
           algo = GPGME_PK_MLDSA;
           break;
 
+        case 32: /* SLH-DSA-SHAKE-128s (RFC9980)    */
+        case 33: /* SLH-DSA-SHAKE-128f (RFC9980)    */
+        case 34: /* SLH-DSA-SHAKE-256s (RFC9980)    */
+          algo = GPGME_PK_SLHDSA;
+          break;
+
         case 35: /* ML-KEM-768+X25519 (RFC9980)      */
         case 36: /* ML-KEM-1024+X448 (RFC9980)       */
         case 37: /* ML-KEM-768+ECDH-NIST-P-384       */

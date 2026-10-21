@@ -5,6 +5,7 @@ Noteworthy changes in version 2.3.0 (unreleased)   [C__/A_/R0]
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  GPGME_PK_MLKEM                NEW.
  GPGME_PK_MLDSA                NEW.
+ GPGME_PK_SLHDSA               NEW.
 
  Release-info: https://dev.gnupg.org/T8427
 

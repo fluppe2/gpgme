@@ -1330,6 +1330,9 @@ gpgme_pubkey_algo_string (gpgme_subkey_t subkey)
     case GPGME_PK_EDDSA: prefix = "";    break;
     case GPGME_PK_MLDSA: composite = 1; break;
     case GPGME_PK_MLKEM: composite = 1; break;
+    case GPGME_PK_SLHDSA:
+      /* The generic family does not identify a parameter set.  */
+      return strdup ("slhdsa");
     }
 
   if (composite && subkey->curve)
@@ -1370,6 +1373,7 @@ gpgme_pubkey_algo_name (gpgme_pubkey_algo_t algo)
     case GPGME_PK_EDDSA: return "EdDSA";
     case GPGME_PK_MLDSA: return "MLDSA";
     case GPGME_PK_MLKEM: return "MLKEM";
+    case GPGME_PK_SLHDSA: return "SLHDSA";
     default:             return NULL;
     }
 }

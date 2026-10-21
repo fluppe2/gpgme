@@ -1295,6 +1295,15 @@ encryption algorithm as defined by RFC-6637.
 
 This value indicates the EdDSA algorithm.
 
+@item GPGME_PK_SLHDSA
+@since{2.3.0}
+
+This value indicates the SLH-DSA signature algorithm family, including
+the SHAKE-128s, SHAKE-128f, and SHAKE-256s variants defined by RFC 9980.
+This family value does not identify the concrete parameter set.
+The algorithm string helper returns the generic descriptor @code{slhdsa}
+without inferring a parameter set from the key length or optional curve text.
+
 @end table
 @end deftp
 
